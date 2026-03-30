@@ -23,12 +23,12 @@ tf.random.set_seed(SEED)
 
 #Load and Data Preprocessing 
 
-TRAIN_DIR = './data/Training' #Storing the data paths in variables for easy recall
-TEST_DIR  = './data/Testing'
+TRAIN_DIR = './Data/Training' #Storing the data paths in variables for easy recall
+TEST_DIR  = './Data/Testing'
 
 img_size = (128, 128) # This sets all Images to be resized to 128x128 pixels.
 
-batch_size = 32 # The numbe of images processed together before the model updates it weights
+batch_size = 32 # The number of images processed together before the model updates it weights
 
 num_classes = 4 #this indicate the number of outputs
 
@@ -174,7 +174,7 @@ callbacks=[
 
 history = model.fit(
     train_gen,
-    epochs=50, #Early stoppinf will cut this short if model stops improving
+    epochs=10, #Early stopping will cut this short if model stops improving
     validation_data=val_gen,
     class_weight=class_weights, #This handles imbalance
     callbacks=callbacks,
